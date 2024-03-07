@@ -8,7 +8,7 @@ class DiscoverPage extends StatelessWidget{
   Widget build(BuildContext context) {
     return Column(
       children: [
-        CustomSearchBar()
+        CustomSearchBar(rightButton:Text('Discover'))
       ],
     );
   }

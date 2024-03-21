@@ -1,9 +1,10 @@
 import 'package:dio/dio.dart';
 
-class Apiservice{
+class ApiService{
   static const String baseUrl ='https://api.example.com';
 
   late Dio _dio;
+
 
   ApiService(){
     _dio = Dio(BaseOptions(baseUrl:baseUrl));
@@ -17,7 +18,7 @@ class Apiservice{
     return _post(url,data);
   }
 
-  Future<dynamic> getUser(String url)async{
+  Future<dynamic> getUser(String userId)async{
     final url ='/user/$userId';
 
     return _get(url);
@@ -44,7 +45,7 @@ class Apiservice{
     try {
       final response = await _dio.request(url, data: data, options: options);
    //  Process the data returned by the server
-   if(response.statuscode ==200) {
+   if(response.statusCode ==200) {
      final responseData = response.data;
      if (responseData['success'] == true) {
        return responseData['data']; //Returns data on success
@@ -53,7 +54,7 @@ class Apiservice{
            responseData['errorCode'], responseData['errorMessage']); // An exception is thrown on failure
      }
    }else {
-   throw ApiException(response.statuscode ??-1,'The network request failed');//If the status code is not 200, an exception is thrown
+   throw ApiException(response.statusCode ??-1,'The network request failed');//If the status code is not 200, an exception is thrown
    }}
     catch(error){
    throw ApiException(-1,'The network request failed');// An exception is thrown when a network request fails
@@ -61,7 +62,7 @@ class Apiservice{
  }
 
  //Add common parameters
-  void addCommonParams(Options options) {
+  void _addCommonParams(Options options) {
     final timestamp = DateTime
         .now()
         .millisecondsSinceEpoch

@@ -34,7 +34,6 @@ class Repository {
   final KeyValuesStorage keyValuesStorage = KeyValuesStorage();
   final ApiService apiService = ApiService();
 
-  Future<void> init() async {
-    await keyValuesStorage.initialize();
+void init()   {
   }
 }

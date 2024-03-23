@@ -3,11 +3,11 @@ import 'package:flutter/services.dart';
 import 'package:wx_reader_book/pages/home_page.dart';
 import 'data_repository/repository.dart';
 
-void main() async{
+void main() {
   // 初始化WidgetsFlutterBinding
   WidgetsFlutterBinding.ensureInitialized();
 
-  await globalRepository.init();
+  globalRepository.init();
 
   runApp(const MyApp());
 

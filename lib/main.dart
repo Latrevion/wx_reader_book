@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:wx_reader_book/pages/home_page.dart';
+import 'package:wx_reader_book/route/logger_navigator_observer.dart';
 import 'data_repository/repository.dart';
 
 void main() {
   // 初始化WidgetsFlutterBinding
   WidgetsFlutterBinding.ensureInitialized();
 
-  globalRepository.init();
+   globalRepository.init();
 
   runApp(const MyApp());
 
@@ -31,6 +32,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      navigatorObservers: [LoggerNavigatorObserver()],
       title: 'I love reading',
       initialRoute: '/',
       routes: {

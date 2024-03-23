@@ -4,6 +4,9 @@ import 'package:wx_reader_book/pages/home_page.dart';
 import 'data_repository/repository.dart';
 
 void main() async{
+  // 初始化WidgetsFlutterBinding
+  WidgetsFlutterBinding.ensureInitialized();
+
   await globalRepository.init();
 
   runApp(const MyApp());

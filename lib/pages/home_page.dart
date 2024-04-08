@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:wx_reader_book/pages/discover_page.dart';
 import 'package:wx_reader_book/pages/look_page.dart';
 import 'package:wx_reader_book/pages/my_self_page.dart';
+import 'package:wx_reader_book/pages/self_page.dart';
 import 'package:wx_reader_book/pages/shelf_page.dart';
 
 class HomePage extends StatelessWidget {
@@ -18,7 +19,8 @@ class HomePage extends StatelessWidget {
             DiscoverPage(),
             ShelfPage(),
             LookPage(),
-            MySelfPage()
+            // MySelfPage()
+            SelfPage()
           ],
         ),
         bottomNavigationBar: StatefulBuilder(

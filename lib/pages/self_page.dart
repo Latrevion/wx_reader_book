@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wx_reader_book/bloc/self_page_bloc.dart';
 import 'package:wx_reader_book/pages/base_page.dart';
+import 'package:wx_reader_book/widgets/loading_widget.dart';
 
 class SelfPage extends BasePage<SelfPageBloc> {
   @override
@@ -23,13 +23,3 @@ class SelfPage extends BasePage<SelfPageBloc> {
   }
 }
 
-class LoadingWidget extends StatelessWidget {
-  const LoadingWidget({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: CircularProgressIndicator(),
-    );
-  }
-}

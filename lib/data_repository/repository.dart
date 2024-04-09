@@ -34,6 +34,9 @@ class Repository {
   final KeyValuesStorage keyValuesStorage = KeyValuesStorage();
   final ApiService apiService = ApiService();
 
-void init()   {
+  void init() {}
+
+  Future<dynamic> getData(String path) async {
+    return await apiService.getData(path);
   }
 }

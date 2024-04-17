@@ -8,12 +8,7 @@ import 'data_repository/repository.dart';
 import 'log/logger.dart';
 
 void main() {
-  // 初始化WidgetsFlutterBinding
-  WidgetsFlutterBinding.ensureInitialized();
 
-  globalRepository.init();
-
-  // runApp(const MyApp());
 
   FlutterError.onError = (FlutterErrorDetails details) {
     // Catch flutter framework exceptions
@@ -21,6 +16,14 @@ void main() {
   };
 
   runZonedGuarded(() {
+    // 初始化WidgetsFlutterBinding
+    WidgetsFlutterBinding.ensureInitialized();
+
+    globalRepository.init();
+
+    // runApp(const MyApp());
+
+
     runApp(const MyApp());
 
     //Unmake the status bar translucent

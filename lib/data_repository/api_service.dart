@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 
 class ApiService {
-  static const String baseUrl = 'http://localhost';
+  static const String baseUrl = 'http://10.0.2.2:88/';
 
   late Dio _dio;
 
@@ -66,7 +66,7 @@ class ApiService {
       }
     } catch (error) {
       throw ApiException(-1,
-          'The network request failed'); // An exception is thrown when a network request fails
+          'The network request failed $error'); // An exception is thrown when a network request fails
     }
   }
 
@@ -103,4 +103,10 @@ class ApiException implements Exception {
   final String errorMessage;
 
   ApiException(this.errorCode, this.errorMessage);
+
+  @override
+  String toString(){
+    String errorStr = 'ApiException errorCode:$errorCode, errorMessage: $errorMessage';
+    return errorStr;
+  }
 }

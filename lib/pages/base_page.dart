@@ -5,7 +5,11 @@ import 'package:wx_reader_book/bloc/base_bloc.dart';
 abstract class BasePage<B extends BaseBloc> extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return BlocProvider<B>(create: createBloc, child: buildPage(context));
+    return BlocProvider<B>(create: createBloc,
+        child:Builder(builder: (c){
+         return  buildPage(c);
+        },),
+    );
   }
 
   B createBloc(BuildContext context);

@@ -18,10 +18,3 @@ class SelfPageBloc extends BaseBloc<BaseBlocState>{
 
 }
 
-class BaseBlocState{}
-
-class StateLoading extends BaseBlocState{}
-
-class StateData extends BaseBlocState{}
-
-class StateError extends BaseBlocState{}

@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:wx_reader_book/pages/book_reader_page.dart';
 import 'package:wx_reader_book/pages/home_page.dart';
 import 'package:wx_reader_book/route/logger_navigator_observer.dart';
 import 'data_repository/repository.dart';
@@ -54,6 +55,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         "/": (context) => HomePage(),
+        BookReaderPage.routeName: (context) => BookReaderPage(),
       },
     );
   }

@@ -15,3 +15,11 @@ void emitState(State state){
 }
 
 }
+
+class BaseBlocState{}
+
+class StateLoading extends BaseBlocState{}
+
+class StateData extends BaseBlocState{}
+
+class StateError extends BaseBlocState{}

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:wx_reader_book/bloc/base_bloc.dart';
 import 'package:wx_reader_book/bloc/self_page_bloc.dart';
 import 'package:wx_reader_book/pages/base_page.dart';
 import 'package:wx_reader_book/utils/time_util.dart';

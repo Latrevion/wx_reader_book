@@ -163,7 +163,7 @@ class SelfPage extends BasePage<SelfPageBloc> {
                   Row(
                     children: [
                       Text(
-                        '${bloc.user.notesCount}',
+                        '${(bloc.user.notesCount??0)+(bloc.user.booksReadCount??0)+(bloc.user.likesCOunt??0)}',
                         style: const TextStyle(
                             fontSize: 11, color: Color(0xff49505a)),
                       ),

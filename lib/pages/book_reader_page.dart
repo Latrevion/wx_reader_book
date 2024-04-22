@@ -4,7 +4,9 @@ import 'package:wx_reader_book/pages/base_page.dart';
 import 'package:wx_reader_book/pages/book_reader.dart';
 
 class BookReaderPage extends BasePage<BookReaderPageBloc> {
-  static const String routeName = "/bookReader";
+  static const   String routeName = "/bookReader";
+
+    const BookReaderPage({Key? key}) : super(key: key);
 
   @override
   Widget buildPage(BuildContext context) {

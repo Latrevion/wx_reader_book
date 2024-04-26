@@ -22,4 +22,9 @@ class StateLoading extends BaseBlocState{}
 
 class StateData extends BaseBlocState{}
 
-class StateError extends BaseBlocState{}
+class StateError extends BaseBlocState{
+  final String msg;
+  StateError(this.msg);
+
+
+}

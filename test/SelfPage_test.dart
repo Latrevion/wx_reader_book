@@ -1,5 +1,5 @@
-import 'dart:convert';
 
+import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:wx_reader_book/bean/User.dart';
@@ -9,11 +9,14 @@ import 'package:wx_reader_book/main.dart';
 import 'package:wx_reader_book/pages/self_page.dart';
 
 import 'TestApp.dart';
+import 'test_common.dart';
 
 void main() {
+  initTest();
+
   testWidgets('Bloc StateData status page show username', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(TestApp( TestSelfPage()));
+    await tester.pumpWidget( TestApp( TestSelfPage()));
 
     expect(find.text('luke'), findsOneWidget);
 
@@ -21,7 +24,7 @@ void main() {
 }
 
 class TestSelfPage extends SelfPage{
-  const TestSelfPage({super.key});
+   TestSelfPage({super.key});
 
   @override
   SelfPageBloc createBloc(BuildContext context) {

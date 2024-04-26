@@ -8,7 +8,7 @@ import 'package:wx_reader_book/widgets/loading_widget.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 
 class SelfPage extends BasePage<SelfPageBloc> {
-  const SelfPage({super.key});
+    SelfPage({super.key});
 
   @override
   Widget buildPage(BuildContext context) {

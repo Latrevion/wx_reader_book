@@ -70,3 +70,5 @@ void handleGlobalError(FlutterErrorDetails details) {
   Logger.logEvent('Exceptions were not caught','global error:${details.exceptionAsString()}\n + stack msg: ${details.stack.toString()}');
   //... Other operations, such as logging and error reporting
 }
+
+bool isRunningTests =false;

@@ -6,7 +6,8 @@ import 'package:wx_reader_book/pages/self_page.dart';
 import 'package:wx_reader_book/pages/shelf_page.dart';
 
 class HomePage extends StatelessWidget {
-   HomePage({super.key});
+  HomePage({super.key});
+
   PageController controller = PageController();
 
   @override
@@ -16,9 +17,9 @@ class HomePage extends StatelessWidget {
         body: PageView(
           controller: controller,
           children: [
-            DiscoverPage(),
-            ShelfPage(),
-            LookPage(),
+            const DiscoverPage(),
+            const ShelfPage(),
+            const LookPage(),
             // MySelfPage()
             SelfPage()
           ],
@@ -32,8 +33,7 @@ class HomePage extends StatelessWidget {
                     icon: Icon(Icons.public), label: 'Discovery'),
                 BottomNavigationBarItem(
                     icon: Icon(Icons.library_books), label: 'Shelf'),
-                BottomNavigationBarItem(
-                    icon: Icon(Icons.hub), label: 'Look'),
+                BottomNavigationBarItem(icon: Icon(Icons.hub), label: 'Look'),
                 BottomNavigationBarItem(
                     icon: Icon(Icons.person), label: 'MySelf'),
               ],

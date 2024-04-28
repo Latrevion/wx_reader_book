@@ -16,7 +16,61 @@ class SelfPage2 extends BasePage<SelfPage2Bloc>{
   Widget buildPage(BuildContext context) {
     var bloc = context.read<SelfPage2Bloc>();
     bloc.loadData();
-    return const LoadingWidget();
+
+    return Scaffold(body:
+      BlocBuilder<SelfPage2Bloc,BaseBlocState>(builder: (c,state){
+   if(state is StateError){
+        return ErrorWidget(state.msg);
+      }else if (state is StateData ){
+     return  Column(
+       children: [
+         Container(
+             height: 173,
+             child: Text(bloc.user.username??'')),
+         Container(
+           height: 48,
+           child: Column(
+             children: [
+
+         Text(bloc.user.balance.toString()),
+         Text('already purchased ${bloc.user.purchasedBooksCount} books'),
+             ],
+           ),
+         ),
+         Container(
+           height: 48,
+           child: Column(
+             children: [
+               Text(bloc.user.pricePerMonth.toString()),
+             ],
+           ),
+         ),
+         Container(
+           height: 48,
+           child: Column(
+             children: [
+               bloc.user.readingTime==0?Text("I didn't start reading this week"):Text('${bloc.user.ranking}')
+             ],
+           ),
+         ),
+         Container(
+           height: 48,
+           child: Column(
+             children: [
+               Text('${bloc.user.followersCount}'),
+               Text('${bloc.user.readingCount}')
+             ],
+           ),
+         ),
+
+         
+       ],
+     );
+
+
+   }
+        return const LoadingWidget();
+    }));
   }
 
   @override
